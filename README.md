@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Better Auth - Next.js Template
 
-## Getting Started
+ <!-- Optional: Add a screenshot of your app -->
 
-First, run the development server:
+A production-ready, feature-rich authentication template for Next.js 14 (App Router). Built with the powerful `better-auth` library, Tailwind CSS, and Shadcn/UI to provide a seamless and secure user experience out of the box.
+
+## ✨ Features
+
+- **Full Authentication Flow**: Secure sign-up, sign-in, and sign-out functionality.
+- **Social Login**: One-click sign-in with Google.
+- **Credentials Login**: Traditional email and password authentication with validation.
+- **Database Integration**: Uses the official `better-auth` **MongoDB adapter** for persistent user data.
+- **Modern UI/UX**: Beautifully designed, responsive, and accessible components from **Shadcn/UI**.
+- **Server-Side Logic**: Leverages Next.js Server Actions for robust and secure form submissions.
+- **Personalized Experience**: Displays user profile information (avatar, name, email) upon login.
+- **Type-Safe**: Written in TypeScript for a better developer experience.
+
+## 🚀 Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Authentication**: better-auth
+- **Database Adapter**: `better-auth/adapters/mongodb`
+- **Styling**: Tailwind CSS
+- **UI Components**: Shadcn/UI
+- **Icons**: Lucide React
+- **Database**: MongoDB
+
+## ⚙️ Getting Started
+
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+- Node.js (v18.17 or later)
+- A MongoDB database and its connection string.
+- Google OAuth credentials (Client ID and Client Secret).
+
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+git clone https://github.com/baseergroot/Better-Auth-Nextjs-Template.git
+cd Better-Auth-Nextjs-Template
+```
+
+### 2. Install Dependencies
+
+```bash
+pnpm install
+```
+
+### 3. Set Up Environment Variables
+
+Create a `.env.local` file in the root of your project and add the following variables. You can get the Google credentials from the Google Cloud Console.
+
+```env
+# Your MongoDB connection string
+MONGODB_URI="your_mongodb_connection_string"
+
+# Google OAuth Credentials
+GOOGLE_CLIENT_ID="your_google_client_id"
+GOOGLE_CLIENT_SECRET="your_google_client_secret"
+
+# A secret key for signing tokens, generated with `openssl rand -hex 32`
+AUTH_SECRET="your_super_secret_auth_key"
+```
+
+### 4. Run the Development Server
+
+```bash
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📄 License
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
