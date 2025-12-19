@@ -9,6 +9,7 @@ interface SigninState {
   error?: {
     email?: string;
     password?: string;
+    form?: string;
   };
   success?: boolean;
 }
@@ -49,15 +50,16 @@ export default async function Signin(initialState: SigninState, formData: FormDa
       body: {
         email,
         password,
+        callbackURL: `${process.env.BETTER_AUTH_URL}`
       }
     })
+    redirect("/");
   } catch (error: unknown) {
     if (error instanceof APIError) {
       console.log("instance error: ", error.message)
-      return { success: false }
+      return { success: false, error: { form: error.message } }
     }
     return { success: false }
   }
  
-  redirect("/");
 }

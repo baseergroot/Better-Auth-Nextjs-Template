@@ -8,7 +8,7 @@ export default async function proxy(req: NextRequest) {
 
   const currentPath = req.nextUrl.pathname;
 
-  const  authRoutes: string[] = ['/login', '/signup'];
+  const  authRoutes: string[] = ['/login', '/create'];
   const protectedRoutes: string[] = ['/dashboard', '/profile'];
 
   if (authRoutes.includes(currentPath) && session) {

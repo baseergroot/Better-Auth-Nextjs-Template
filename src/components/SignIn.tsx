@@ -58,6 +58,9 @@ export default function SignInForm() {
                   {state.error.password}
                 </p>
               )}
+              {state.error?.form && (
+                <p className="text-sm text-red-500">{state.error.form}</p>
+              )}
             </div>
             <Button type="submit" className={`w-full ${pending && "cursor-not-allowed"}`} disabled={pending}>{pending ? "Signing In..." : "Sign In"}</Button>
             <div className="relative my-2">

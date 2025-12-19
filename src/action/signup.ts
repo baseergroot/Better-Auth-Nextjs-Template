@@ -54,6 +54,7 @@ export default async function Signup(initialState: SignupState, formData: FormDa
         name,
         email,
         password,
+        callbackURL: `${process.env.BETTER_AUTH_URL}`
       }
     })
     console.log("auth res: ", response)
