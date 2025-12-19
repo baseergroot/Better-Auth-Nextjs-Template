@@ -12,6 +12,7 @@ interface SigninState {
     form?: string;
   };
   success?: boolean;
+  redirect?: boolean;
 }
 
 const formValidation = z.object({
@@ -53,7 +54,7 @@ export default async function Signin(initialState: SigninState, formData: FormDa
         callbackURL: `${process.env.BETTER_AUTH_URL}`
       }
     })
-    redirect("/");
+    return { success: true, redirect: true }
   } catch (error: unknown) {
     if (error instanceof APIError) {
       console.log("instance error: ", error.message)
@@ -61,5 +62,4 @@ export default async function Signin(initialState: SigninState, formData: FormDa
     }
     return { success: false }
   }
- 
 }

@@ -12,6 +12,7 @@ interface SignupState {
     password?: string;
   };
   success?: boolean;
+  redirect?: boolean;
 }
 
 const formValidation = z.object({
@@ -58,8 +59,8 @@ export default async function Signup(initialState: SignupState, formData: FormDa
       }
     })
     console.log("auth res: ", response)
-    // redirect("/")
-    return {success: true}
+
+    return {success: true, redirect: true}
 
   } catch (error: unknown) {
     if (error instanceof APIError) {

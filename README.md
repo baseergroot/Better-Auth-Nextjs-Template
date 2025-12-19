@@ -53,15 +53,18 @@ pnpm install
 Create a `.env.local` file in the root of your project and add the following variables. You can get the Google credentials from the Google Cloud Console.
 
 ```env
-# Your MongoDB connection string
-MONGODB_URI="your_mongodb_connection_string"
+BETTER_AUTH_SECRET= # generate using `openssl rand -base64 32`
+BETTER_AUTH_URL= # e.g., http://localhost:3000
 
-# Google OAuth Credentials
-GOOGLE_CLIENT_ID="your_google_client_id"
-GOOGLE_CLIENT_SECRET="your_google_client_secret"
+MONGODB_URI= # your mongodb connection string
 
-# A secret key for signing tokens, generated with `openssl rand -hex 32`
-AUTH_SECRET="your_super_secret_auth_key"
+# google secret
+GOOGLE_CLIENT_ID= # your google client id
+GOOGLE_CLIENT_SECRET= # your google client secret
+
+# resend api key
+RESEND_API_KEY= # your resend api key
+EMAIL_FROM= # e.g no-reply@yourdomain.com
 ```
 
 ### 4. Run the Development Server

@@ -15,9 +15,15 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useActionState } from "react";
 import GoogleOAuthBtn from "./googleOAuthBtn";
+import { useRouter } from "next/navigation";
 
 export default function SignUpForm() {
   const [state, formAction, pending] = useActionState(Signup, { success: false });
+  const router = useRouter()
+
+  if (state.redirect) {
+    router.push("/create/verify-email")
+  }
 
   return (
     <div className="flex items-center justify-center min-h-screen">
